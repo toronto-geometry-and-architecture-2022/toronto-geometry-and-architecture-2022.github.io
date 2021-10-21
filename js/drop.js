@@ -234,6 +234,6 @@ if(queryDict['wait'])
 }
 window.onload = function ()
 {
-  // after full 3 minutes
-  window.setTimeout(start,wait*3*60000);
+  // after full 0.5 minutes
+  window.setTimeout(start,wait*0.5*60000);
 }

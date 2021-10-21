@@ -1,0 +1,530 @@
+:root {
+  --green: #33bb4D;
+  --red:   #cc334D;
+  --blue:  #334DCC;
+  --yellow: #ffed91;
+  --darkblue:  #131D4D;
+  --lightblue:  #7585D5;
+  --lightgray:  #f2f2f2;
+  --darkgray:  #333;
+}
+
+/* setup layout */
+@page 
+{
+  size: 8.5in 11in;
+  margin: 1in;
+  orphans: 1;
+  widows: 1;
+}
+
+/* Setup font */
+body
+{
+  font-size: 10pt;
+  text-align: justify;
+  font-family: "Linux Libertine", "Times New Roman", Times, serif;
+}
+
+@font-face {
+    font-family: 'Linux Libertine'; /* normal */
+    src: url('../fonts/linux-libertine/LinLibertine_R.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Linux Libertine'; /* italic */
+    src: url('../fonts/linux-libertine/LinLibertine_RI.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Linux Libertine'; /* bold */
+    src: url('../fonts/linux-libertine/LinLibertine_RB.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Linux Libertine'; /* bold */
+    src: url('../fonts/linux-libertine/LinLibertine_RBI.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Linux Biolinum'; /* normal */
+    src: url('../fonts/linux-biolinum/LinBiolinum_R.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Linux Biolinum'; /* italic */
+    src: url('../fonts/linux-biolinum/LinBiolinum_RI.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Linux Biolinum'; /* bold */
+    src: url('../fonts/linux-biolinum/LinBiolinum_RB.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Linux Biolinum'; /* bold */
+    src: url('../fonts/linux-biolinum/LinBiolinum_RBI.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* title page */
+h1
+{
+  text-align: left;
+  margin-top: 4.5in;
+  page-break-before: always;
+  page-break-after: always;
+  string-set: sectionname content();
+}
+h1[id*=short]
+{
+  margin-top: auto;
+  page-break-after: auto;
+}
+h1:not([id*=short]):after
+{
+  font-style: italic;
+  white-space: pre;
+  content: "\A Alec Jacobson";
+}
+h1[id*=short] em
+{
+  font-size: 0.8em;
+}
+
+
+/* header and footer */
+@page
+{
+  @bottom-left{
+    color: #888;
+    content: string(sectionname);
+    font-size: 10pt;
+    font-family: "Linux Libertine", "Times New Roman", Times, serif;
+  }
+  @bottom-center{
+    color: #888;
+    content: counter(page)"/"counter(pages);
+    text-align: center;
+    font-size: 10pt;
+    font-family: "Linux Libertine", "Times New Roman", Times, serif;
+  }
+  @bottom-right{
+    color: #888;
+    font-size: 10pt;
+    content: "Alec Jacobson";
+    font-style: italic;
+    text-align: right;
+    font-family: "Linux Libertine", "Times New Roman", Times, serif;
+  }
+}
+
+@page :first
+{
+  @top-left{
+    content: none;
+  }
+  @top-right{
+    content: none;
+  }
+  @bottom-left{
+    content: none;
+  }
+  @bottom-right {
+    content: none;
+  }
+  @bottom-center{
+    content: none;
+  }
+}
+
+/* table of contents */
+div#toc ul
+{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+div#toc ul ul
+{
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0.5cm;
+}
+
+div#toc a[href]
+{
+  color: inherit;
+  text-decoration: none;
+}
+
+div#toc a[href]::after 
+{ 
+  content: leader(".") target-counter(attr(href), page) ;
+}
+
+/*
+p img
+{
+  float: right;
+  width: 5.4cm;
+  margin: 0 0 0px 0px;
+  padding: 5px;
+  padding-bottom: 0px;
+  padding-top: 10px;
+  text-align: left;
+}
+*/
+
+/* colors for student supervising
+em strong
+{
+  color:#334DCC;
+}
+
+strong em 
+{
+  color:#33bb4D;
+}
+*/
+
+
+a
+{
+  color: inherit;
+  text-decoration: none;
+}
+
+/* links in activity since joining */
+strong a[href*="#"]:after {
+  content: " [page "target-counter(attr(href), page)"] ";
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* table bullshit */
+table tr {
+  border-top: none;
+  background-color: inherit;
+}
+table tr:nth-child(2n) {
+  background-color: inherit;
+}
+table tr th, table tr td {
+  vertical-align: top;
+  font-size: 1em;
+  white-space: nowrap;
+  border: none;
+  margin: 0;
+  padding: 0em 0em;
+  padding-right: 0.75em;
+  padding-bottom: 0.25em;
+  padding-top: 0.25em;
+}
+tr
+{
+  page-break-inside: avoid;
+}
+td[colspan="2"]
+{
+  font-weight: bold;
+  font-style: italic;
+}
+td[colspan="2"]:after
+{
+  content: ":";
+}
+div.tight_table table
+{
+  page-break-inside: avoid !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+div.tight_table td
+{
+  padding-left:  0.1cm;
+  padding-right: 0.1cm;
+}
+table
+{
+  width: 100%;
+}
+div.tight_table table
+{
+  width: auto;
+}
+div.tight_table td
+{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+td p
+{
+  margin-top: 0;
+  margin-bottom: 0.8em;
+}
+
+/* for included documents */
+blockquote
+{
+  color: #888;
+  margin-left: 0;
+  border-left: 0.1in #888 solid;
+  padding-left: 0.1in;
+}
+blockquote img
+{
+  max-width: 100%;
+}
+
+blockquote blockquote
+{
+  color: #aaa;
+  margin-left: 0;
+  border-left: 0.1in #aaa solid;
+  padding-left: 0.1in;
+}
+
+blockquote em strong
+{
+  color: inherit;
+}
+
+blockquote strong em 
+{
+  color: inherit;
+}
+blockquote pre
+{
+  font-size: 8pt;
+}
+
+code
+{
+  display: block;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  padding: 0.5em;
+  margin-left: -50px;
+  margin-right: -50px;
+  background-color: #fe6;
+}
+
+div.publist
+{
+  counter-reset: pubcount;
+}
+div.publist p
+{
+  counter-increment: pubcount;
+}
+div.publist p:before
+{
+  content: "" counter(pubcount) ". ";
+}
+
+div.reppubs 
+{
+  counter-reset: reppubcount;
+}
+div.reppubs h3
+{
+  font-size: 10pt;
+  counter-increment: reppubcount;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+div.reppubs p,ul
+{
+  padding: 0;
+  margin: 0;
+}
+div.reppubs h3:before
+{
+  content: "" counter(reppubcount) ". ";
+}
+div.reppubs ul
+{
+  padding: 0;
+  padding-left: 1em;
+}
+div.reppubs li
+{
+  list-style: none;
+}
+
+img.role
+{
+  float: left;
+  height: 4em;
+  margin: 0 0 0px 0px;
+  padding: 5px;
+  padding-bottom: 1em;
+  padding-top: 0px;
+  text-align: left;
+}
+
+ul li
+{
+  list-style-position: outside;
+  margin-left: 2em;
+}
+
+.floatright
+{
+  float:right;
+  padding-left:20px;
+  page-break-inside: avoid !important;
+}
+
+
+.third
+{
+  width: 2.1667in;
+}
+.third img
+{
+  max-width: 100%;
+}
+.third p
+{
+  font-family: 'Linux Biolinum';
+  font-size: 0.75em;
+  margin:0;
+  padding-bottom:0.2em;
+  hyphens: auto;
+}
+
+.floatleft
+{
+  float:left;
+  padding-right:20px;
+  page-break-inside: avoid;
+}
+.fifth
+{
+  width: 0.9in;
+}
+.fifth img
+{
+  max-width: 100%;
+  width: 0.9in;
+  border-radius: 0.9in;
+}
+
+
+
+span.hqp
+{
+  font-weight: bold;
+  font-style: italic;
+  color: var(--blue);
+}
+span.hqp2
+{
+  font-weight: bold;
+  font-style: italic;
+  color: var(--lightblue);
+}
+span.keynote
+{
+  font-weight: bold;
+  color:#cc334D;
+}
+span.keynote:before
+{
+  content: "[";
+}
+span.keynote:after
+{
+  content: "]";
+}
+
+div.hyphenate
+{
+hyphens: auto;
+}
+
+div.footnotes hr
+{
+  border: 0;
+  display: none;
+}
+div.footnotes
+{
+  font-size: 0.8em;
+  margin: 0;
+}
+div.footnotes ol
+{
+  margin-top: 0;
+  margin-left: 3em;
+}
+div.footnotes li
+{
+  break-inside: avoid-column;
+}
+div.footnotes li:first-of-type
+{
+  margin-top: 0 !important;
+}
+li.citation:first-of-type p
+{
+  margin-top: 0 !important;
+}
+
+/*
+p { page-break-inside: avoid;  } 
+figure { page-break-inside: avoid;  } 
+*/
+
+.footnotes
+{
+   column-count: 2;
+      -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    word-break:break-word;
+    hyphens: auto;
+}
+
+.footnotes strong
+{
+  font-weight: normal;
+}
+span.ongoing:before
+{
+  content: "○ ";
+  font-size: 0.7em;
+  font-style: normal;
+  vertical-align: text-top;
+}
+span.completed:before
+{
+  content: "● ";
+  font-style: normal;
+  font-size: 0.7em;
+  vertical-align: text-top;
+}
+
+@font-face {
+  font-family: 'heart';
+  src: local('Apple Color Emoji');
+  unicode-range: U+1F300-1F5FF, U+1F600-1F64F, U+1F680-1F6FF, U+2600-26FF;
+}

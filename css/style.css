@@ -32,6 +32,7 @@
   --blue:  #334DCC;
   --yellow: #ffed91;
   --darkblue:  #131D4D;
+  --darkred:  #8b0000;;
   --lightblue:  #7585D5;
   --lightgray:  #f2f2f2;
   --darkgray:  #333;
@@ -131,7 +132,7 @@ li
 a
 {
   background-color: var(--lightgray);
-  color: var(--darkblue);
+  color: var(--darkred);
   text-decoration: none;
 }
 a:hover
@@ -181,7 +182,7 @@ small
 .emlist
 {
   font-weight: bold;
-  color: var(--darkblue);
+  color: var(--darkred);
 }
 li.evalquote
 {

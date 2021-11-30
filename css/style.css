@@ -274,7 +274,7 @@ table tr th:nth-child(2)
 
 table tr:nth-child(even)
 {
-  background-color: #f6b6ac;
+  background-color: #facfc8;
 }
 span.session
 {

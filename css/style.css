@@ -283,3 +283,13 @@ span.session
   text-align: center;
   display: block;
 }
+.poster
+{
+  max-width: 50%;
+}
+figure{
+  text-align: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}

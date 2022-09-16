@@ -160,63 +160,77 @@ a[href$=".pdf"]:after
 {
   content: " [pdf]";
 }
+
 .hqp, .hqp2, .me
 {
   font-weight: bold;
 }
+
 .hqp
 {
   color: var(--blue);
 }
+
 .hqp2
 {
   color: var(--lightblue);
 }
+
 h1
 {
   margin-top: 1em;
   margin-bottom: 0.5em;
 }
+
 .venue
 {
   font-style: italic;
 }
+
 .venues .venue
 {
   font-weight: bold;
   color: var(--blue);
 }
+
 small
 {
   font-weight: normal;
 }
+
 .emlist
 {
   font-weight: bold;
   color: var(--darkred);
 }
+
 li.evalquote
 {
   position: relative;
   list-style-type: none;
   padding-bottom: 0.4em;
 }
+
 .evalquote:before, .evalquote:after
 {
 }
+
 .evalquote:before
 {
   content: "“";
 }
+
 .evalquote:after
 {
   content: "”";
 }
+
 .evalmeanfas
 {
   font-weight: bold;
   color: var(--blue);
 }
+
 .evalmeansgs
 {
   font-weight: bold;
@@ -228,23 +242,30 @@ img#eval-plot
   width: 100%;
   padding-bottom: 1em;
 }
+
 .footer
 {
   font-size: 0.5em;
   text-align: center;
 }
+
 li.ongoing
 {
   list-style-type: circle;
 }
+
 li.completed
 {
   list-style-type: disc;
 }
+
 img.headliner
 {
   max-width: 300px;
+  shape-outside: circle(50%);
+  border-radius: 80%;
 }
+
 img.opener
 {
   max-width: 250px;
@@ -254,6 +275,7 @@ table thead tr:first-child
 {
   border-bottom: 4px solid #cc3b23;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -261,6 +283,7 @@ table {
     margin-right: auto;
     margin-bottom: 2em;
 }
+
 table tr th,td
 {
   border: 0;
@@ -268,16 +291,19 @@ table tr th,td
   padding: 0.25em;
   padding-right: 0.5em;
 }
+
 table tr th:first-child
 { 
   padding-bottom: 0.05em;
   text-align: center;
 }
+
 table tr td:first-child
 { 
   text-align: right;
   vertical-align: top;
 }
+
 table tr th:nth-child(2)
 { 
   text-align: left;
@@ -287,6 +313,7 @@ table tr:nth-child(even)
 {
   background-color: #facfc8;
 }
+
 span.session
 {
   color: default;
@@ -294,17 +321,26 @@ span.session
   text-align: center;
   display: block;
 }
+
 .poster
 {
   max-width: 50%;
 }
+
 figure{
   text-align: center;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
+
+.keynote{
+  height:320px;
+  margin-top: 0px;
+}
+
 .multi-column
 {
   column-width: 10em;
 }
+

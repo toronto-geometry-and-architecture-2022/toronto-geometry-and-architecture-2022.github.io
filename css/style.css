@@ -335,7 +335,8 @@ figure{
 }
 
 .keynote{
-  height:320px;
+  /*height:320px;*/
+  height: 30%;
   margin-top: 0px;
 }
 

@@ -345,3 +345,15 @@ figure{
   column-width: 10em;
 }
 
+.keynote-name
+{
+  font-weight: bold;
+  font-size: 1.0em;
+}
+
+.keynote-affiliation
+{
+  font-style: italic;
+  font-size: 1.2em;
+}
+
